@@ -14,8 +14,8 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import ModalScreen from '../screens/ModalScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
-import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
+import CameraScreen from '../screens/CameraScreen';
+import GameScreen from '../screens/GameScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 
@@ -63,10 +63,10 @@ function BottomTabNavigator() {
         tabBarActiveTintColor: Colors[colorScheme].tint,
       }}>
       <BottomTab.Screen
-        name="TabOne"
-        component={TabOneScreen}
-        options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
-          title: 'Tab One',
+        name="Camera"
+        component={CameraScreen}
+        options={({ navigation }: RootTabScreenProps<'Camera'>) => ({
+          title: 'Camera',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => (
             <Pressable
@@ -85,10 +85,10 @@ function BottomTabNavigator() {
         })}
       />
       <BottomTab.Screen
-        name="TabTwo"
-        component={TabTwoScreen}
+        name="Game"
+        component={GameScreen}
         options={{
-          title: 'Tab Two',
+          title: 'Game',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
